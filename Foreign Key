@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS Employee;
+DROP TABLE IF EXISTS Department;
+
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Department (dept_id, dept_name) VALUES
+(1, 'HR'),
+(2, 'IT'),
+(3, 'Finance');
+
+SELECT * FROM Department;
+
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50) NOT NULL,
+    dept_id INT,
+    CONSTRAINT fk_emp_dept FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+);
+
+INSERT INTO Employee (emp_id, emp_name, dept_id) VALUES
+(101, 'Ravi', 1),
+(102, 'Priya', 2),
+(103, 'Amit', 2);
+
+SELECT * FROM Employee;
