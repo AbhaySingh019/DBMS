@@ -1,0 +1,14 @@
+CREATE TABLE book (
+  bookid INT PRIMARY KEY,
+  title VARCHAR(50) NOT NULL,
+  author VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE book
+ADD price INT;
+
+INSERT INTO book VALUES (1, 'DBMS', 'navathe', 500);
+INSERT INTO book VALUES (2, 'C programming', 'dennis ritchie', 650);
+INSERT INTO book VALUES (3, 'java basics', 'james gosling', 700);
+
+SELECT * FROM book;
