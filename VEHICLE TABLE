@@ -1,0 +1,14 @@
+CREATE TABLE vehicle (
+  vehicleid INT PRIMARY KEY,
+  model VARCHAR(10) NOT NULL,
+  company VARCHAR(15) NOT NULL,
+  price VARCHAR(15) NOT NULL
+);
+
+INSERT INTO vehicle VALUES (1, 'swift', 'maruti', '6lakh');
+INSERT INTO vehicle VALUES (2, 'creta', 'hyundai', '11lakh');
+INSERT INTO vehicle VALUES (3, 'i20', 'hyundai', '8lakh');
+INSERT INTO vehicle VALUES (4, 'nexon', 'tata', '8.5lakh');
+INSERT INTO vehicle VALUES (5, 'bolero', 'mahindra', '9lakh');
+
+SELECT * FROM vehicle;
