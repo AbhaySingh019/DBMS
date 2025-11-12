@@ -1,0 +1,8 @@
+CREATE TABLE Customer2 (customer_id INT PRIMARY KEY,name VARCHAR(50),city VARCHAR(50),balance DECIMAL(10,2));
+insert into Customer2 values(1,"Amit","Lucknow",5000),(2,"Riya","Delhi",7000),(3,"Ankit","Mumbai",6500),(4,"Sneha","Delhi",5000);
+select * from Customer2;
+SET SQL_SAFE_UPDATES = 0;
+update Customer2 set balance=9000 where name="Riya";
+SET SQL_SAFE_UPDATES = 1;
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM Customer2 WHERE city = 'Delhi';
