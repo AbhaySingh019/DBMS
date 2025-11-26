@@ -1,0 +1,16 @@
+create table Product(
+  ProductId int primary key,
+  name varchar(50),
+  category varchar(50),
+  price decimal(10,2)
+);
+
+insert into Product(ProductId,name,category,price) values
+(1, 'Laptop', 'Electronics', 50000),
+(2, 'Table', 'Furniture', 8000),
+(3, 'Camera', 'Electronics', 30000),
+(4, 'Chair', 'Furniture', 4000);
+update Product
+set price= 55000
+where name='Laptop';
+select * from Product;
