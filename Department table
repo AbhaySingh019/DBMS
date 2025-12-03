@@ -1,0 +1,37 @@
+-- Step 1: Create Department table
+CREATE TABLE Department (
+    DeptID INT PRIMARY KEY NOT NULL,
+    DeptName VARCHAR(100) NOT NULL
+);
+
+-- Step 2: Create Employee_information table
+CREATE TABLE Employee_information (
+    EmpID INT PRIMARY KEY NOT NULL,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50),
+    Email VARCHAR(100) UNIQUE,
+    Phone VARCHAR(15) UNIQUE,
+    Salary DECIMAL(10,2) CHECK (Salary > 0 AND Salary < 200000),
+    DeptID INT,
+    HireDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+);
+
+-- Step 3: Insert sample departments
+INSERT INTO Department (DeptID, DeptName)
+VALUES 
+(1, 'Engineering'),
+(2, 'HR'),
+(3, 'Finance');
+
+-- Step 4: Insert sample employees
+INSERT INTO Employee_information 
+(EmpID, FirstName, LastName, Email, Phone, Salary, DeptID)
+VALUES
+(101, 'Abhay', 'Singh', 'abhay@example.com', '9876543210', 75000, 1),
+(102, 'Ravi', 'Kumar', 'ravi@example.com', '9123456780', 60000, 2),
+(103, 'Sneha', 'Verma', 'sneha@example.com', '9988776655', 85000, 3);
+
+-- Step 5: Query to see output
+SELECT * FROM Employee_information;
+
